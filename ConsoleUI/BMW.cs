@@ -14,6 +14,12 @@ namespace ConsoleUI
 
         public string Model { get; set; }
 
+        // default constructor
+        public BMW()
+        {
+
+        }
+
         public BMW(int hp, string color, string model) : base (hp, color)
         {
             this.Model = model;
