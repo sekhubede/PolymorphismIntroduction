@@ -12,6 +12,21 @@ namespace ConsoleUI
         public int HP { get; set; }
         public string Color { get; set; }
 
+        // Create an instance of the CarIDInfo class.
+        // has a relationship.
+        protected CarIDInfo carIDInfo = new CarIDInfo();
+
+        public void SetCarIDInfo(int idNumber, string owner)
+        {
+            carIDInfo.IDNumber = idNumber;
+            carIDInfo.Owner = owner;
+        }
+
+        public void GetCarIDInfo()
+        {
+            WriteLine($"The car has the ID of {carIDInfo.IDNumber} and is owned by {carIDInfo.Owner}");
+        }
+
         public Car()
         {
 
@@ -22,6 +37,7 @@ namespace ConsoleUI
             this.HP = hp;
             this.Color = color;
         }
+
 
         public void ShowDetails()
         {
