@@ -14,19 +14,19 @@ namespace ConsoleUI
 
         public string Model { get; set; }
 
-        public Audi(int hp, string color, string model, string brand) : base(hp, color)
+        public Audi(int hp, string color, string model) : base(hp, color)
         {
             this.Model = model;
         }
 
-        public override void ShowDetails()
+        public void ShowDetails()
         {
-            WriteLine($"Brnd: {Brand} HP: {this.HP} Color: {this.Color}");
+            WriteLine($"Brand: {Brand} HP: {this.HP} Color: {this.Color}");
         }
 
         public override void Repair()
         {
-            WriteLine($"The {Brand} was repaired.");
+            WriteLine($"The {Brand} {Model} was repaired.");
         }
 
     }
