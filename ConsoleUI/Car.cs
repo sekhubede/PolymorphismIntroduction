@@ -18,11 +18,12 @@ namespace ConsoleUI
             this.Color = color;
         }
 
-        public virtual void ShowDetails()
+        public void ShowDetails()
         {
             WriteLine($"HP: {this.HP} Color: {this.Color}");
         }
 
+        // Virtual method that can be overriden by the deriving classes.
         public virtual void Repair()
         {
             WriteLine("Car was repaired.");
