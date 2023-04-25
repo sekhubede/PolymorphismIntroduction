@@ -8,6 +8,7 @@ using static System.Console;
 
 namespace ConsoleUI
 {
+    // an Audi is a Car
     public class Audi : Car
     {
         private string Brand = "Audi";
