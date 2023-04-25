@@ -19,14 +19,17 @@ namespace ConsoleUI
             this.Model = model;
         }
 
-        public override void ShowDetails()
+        // new keyword states that this method has priority over the
+        // base class method if object created from this class else use base class method.
+        public new void ShowDetails()
         {
-            WriteLine($"Brnd: {Brand} HP: {this.HP} Color: {this.Color}");
+            WriteLine($"Brand: {Brand} HP: {this.HP} Color: {this.Color}");
         }
 
+        // override, overrides the base class method.
         public override void Repair()
         {
-            WriteLine($"The {Brand} was repaired.");
+            WriteLine($"The {Brand} {Model} was repaired.");
         }
 
     }
