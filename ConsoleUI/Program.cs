@@ -44,9 +44,16 @@ namespace ConsoleUI
 
             bmwZ3.ShowDetails();
             audiA3.ShowDetails();
-
+            
             WriteLine();
 
+            bmwZ3.SetCarIDInfo(1234, "Michael");
+            audiA3.SetCarIDInfo(5473, "Mike");
+            bmwZ3.GetCarIDInfo();
+            audiA3.GetCarIDInfo();
+
+            WriteLine();
+            
             BMW bmwM5 = new BMW(330, "white", "M5");
 
             bmwM5.ShowDetails();
