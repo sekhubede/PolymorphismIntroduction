@@ -8,7 +8,7 @@ using static System.Console;
 
 namespace ConsoleUI
 {
-    public class BMW : Car
+    sealed public class BMW : Car
     {
         private string Brand = "BMW";
 
@@ -33,7 +33,9 @@ namespace ConsoleUI
         }
 
         // override, overrides the base class method.
-        public override void Repair()
+        // sealed, prevents deriving classes to override this method.
+        // cannot be used on a virtual method.
+        public sealed override void Repair()
         {
             WriteLine($"The {Brand} {Model} was repaired.");
         }
