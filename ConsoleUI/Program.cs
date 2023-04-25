@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using static System.Console;
 
 namespace ConsoleUI
@@ -16,7 +17,45 @@ namespace ConsoleUI
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            // A car can be a BMW, an Audi, a Porsche etc.
+            // Polymorphism at work #1: an Audi, BMW, Porsche
+            // can all be used where ever a Car is expected. No cast is
+            // required because an implicit conversion exists from a derived
+            // class to its base class.
+
+            var cars = new List<Car>
+            {
+                new Audi(200, "blue", "A4"),
+                new BMW(250, "red", "M3")
+            };
+
+            // Polymorphism at work #2: the virtual method Repair is
+            // invoked on each of the derived classes, not the base class.
+
+            foreach (var car in cars)
+            {
+                car.Repair();
+            }
+
+            ReadKey(true);
+
+            Car bmwZ3 = new BMW(200, "black", "Z3");
+            Car audiA3 = new Audi(100, "green", "A3");
+
+            bmwZ3.ShowDetails();
+            audiA3.ShowDetails();
+
+            ReadKey(true);
+
+            BMW bmwM5 = new BMW(330, "white", "M5");
+
+            bmwM5.ShowDetails();
+
+            // Casting, use the base class method on a deriving class method that has it's own method.
+            Car carB = (Car)bmwM5;
+            carB.ShowDetails();
+
+            ReadKey(true);
         }
     }
 }
